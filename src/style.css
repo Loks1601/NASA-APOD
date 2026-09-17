@@ -14,13 +14,15 @@ body {
   margin: 0;
 }
 
-/* Main content */
 #app {
   max-width: 1000px;
   margin: 0 auto;
 }
 
-/* Title */
+/* =========================
+   HEADER
+   ========================= */
+
 #app h1 {
   text-align: center;
   font-family: 'Orbitron', sans-serif;
@@ -29,7 +31,25 @@ body {
   letter-spacing: 1px;
 }
 
-/* Images, videos and YouTube embeds */
+#app .eyebrow {
+  text-align: center;
+  font-family: 'Black Ops One', sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+#app .date {
+  text-align: center;
+  color: #7f8499 !important;
+  margin-bottom: 20px !important;
+  font-size: 0.95rem !important;
+}
+
+/* =========================
+   MEDIA
+   ========================= */
+
 #app img,
 #app video,
 #app iframe {
@@ -45,7 +65,10 @@ body {
   border: none;
 }
 
-/* Explanation text */
+/* =========================
+   TEXT
+   ========================= */
+
 #app p {
   max-width: 850px;
   margin: 0 auto;
@@ -55,15 +78,107 @@ body {
   color: #c7c9d1;
 }
 
-/* APOD date */
-#app .date {
-  text-align: center;
-  color: #7f8499 !important;
-  margin-bottom: 20px !important;
-  font-size: 0.95rem !important;
+/* =========================
+   DATE EXPLORER
+   ========================= */
+
+.date-explorer {
+  max-width: 850px;
+  margin: 30px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
-/* Side decorations */
+.date-explorer label {
+  font-size: 1rem;
+}
+
+.date-explorer input {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+}
+
+.date-buttons {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+}
+
+.date-buttons button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  background: #241047;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.date-buttons button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  background: #35156b;
+}
+
+.date-buttons button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* =========================
+   APOD INFO
+   ========================= */
+
+.apod-info {
+  max-width: 850px;
+  margin: 40px auto;
+}
+
+.apod-info h2 {
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* =========================
+   LOADING
+   ========================= */
+
+.loading {
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem;
+  padding: 100px 0;
+}
+
+/* =========================
+   ERROR
+   ========================= */
+
+.error {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.error h2 {
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 15px;
+}
+
+.error p {
+  margin: 0 auto;
+}
+
+/* =========================
+   ZIG-ZAG SIDE DECORATION
+   ========================= */
+
 body::before,
 body::after {
   content: '';
@@ -130,15 +245,10 @@ body::after {
   transform: scaleX(-1);
 }
 
-body::before {
-  left: 0;
-}
+/* =========================
+   MOBILE
+   ========================= */
 
-body::after {
-  right: 0;
-}
-
-/* Hide side decorations on small screens */
 @media (max-width: 600px) {
   body {
     padding: 20px;
@@ -155,5 +265,17 @@ body::after {
 
   #app p {
     font-size: 1rem;
+  }
+
+  .date-explorer {
+    flex-direction: column;
+  }
+
+  .date-buttons {
+    flex-direction: column;
+  }
+
+  .date-buttons button {
+    width: 100%;
   }
 }
